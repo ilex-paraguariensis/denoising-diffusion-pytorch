@@ -1,0 +1,152 @@
+{
+    "name": "",
+    "description": "",
+    "version": "",
+    "author": "",
+    "license": "",
+    "url": "diffusion/trainers/denoising_diffusion_pytorch/",
+    "category": "",
+    "backbone": "",
+    "type": "trainers",
+    "exports": {
+        "classes": [
+            {
+                "class_name": "Trainer",
+                "module": "denoising_diffusion_pytorch",
+                "params": {
+                    "diffusion_model": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "data_loader": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "train_batch_size": 16,
+                    "gradient_accumulate_every": 1,
+                    "train_lr": 0.0001,
+                    "train_num_steps": 100000,
+                    "ema_update_every": 10,
+                    "ema_decay": 0.995,
+                    "adam_betas": [
+                        0.9,
+                        0.99
+                    ],
+                    "save_and_sample_every": 1000,
+                    "num_samples": 25,
+                    "results_folder": "./results",
+                    "amp": false,
+                    "fp16": false,
+                    "split_batches": true
+                },
+                "samples": [
+                    {
+                        "sample": {
+                            "class_name": "Trainer",
+                            "module": "trainers.denoising_diffusion_pytorch",
+                            "object_key": "trainer",
+                            "params": {
+                                "diffusion_model": "{diffusion}",
+                                "data_loader": "{data}",
+                                "gradient_accumulate_every": 1,
+                                "train_lr": 0.0001,
+                                "train_num_steps": 100000,
+                                "ema_update_every": 10,
+                                "ema_decay": 0.995,
+                                "adam_betas": [
+                                    0.9,
+                                    0.99
+                                ],
+                                "save_and_sample_every": 1000,
+                                "num_samples": 25,
+                                "results_folder": "./results",
+                                "amp": false,
+                                "fp16": false,
+                                "split_batches": true
+                            },
+                            "method_args": [
+                                {
+                                    "function": "train",
+                                    "params": {}
+                                }
+                            ]
+                        },
+                        "experiment": {
+                            "data": {
+                                "module": "data_loaders.cars.augmented",
+                                "function": "get_dataloader",
+                                "params": {
+                                    "image_size": 128,
+                                    "augment_horizontal_flip": true,
+                                    "batch_size": 4,
+                                    "data_dir": "./data/"
+                                },
+                                "object_key": "data"
+                            },
+                            "model": {
+                                "module": "models.diffusion",
+                                "class_name": "Unet",
+                                "object_key": "model",
+                                "params": {
+                                    "dim": 64,
+                                    "dim_mults": [
+                                        1,
+                                        2,
+                                        4,
+                                        8
+                                    ]
+                                }
+                            },
+                            "diffusion": {
+                                "module": "models.diffusion",
+                                "class_name": "GaussianDiffusion",
+                                "object_key": "diffusion",
+                                "params": {
+                                    "model": "{model}",
+                                    "image_size": 128,
+                                    "timesteps": 1000,
+                                    "loss_type": "l1"
+                                }
+                            },
+                            "trainer": {
+                                "class_name": "Trainer",
+                                "module": "trainers.denoising_diffusion_pytorch",
+                                "object_key": "trainer",
+                                "params": {
+                                    "diffusion_model": "{diffusion}",
+                                    "data_loader": "{data}",
+                                    "gradient_accumulate_every": 1,
+                                    "train_lr": 0.0001,
+                                    "train_num_steps": 100000,
+                                    "ema_update_every": 10,
+                                    "ema_decay": 0.995,
+                                    "adam_betas": [
+                                        0.9,
+                                        0.99
+                                    ],
+                                    "save_and_sample_every": 1000,
+                                    "num_samples": 25,
+                                    "results_folder": "./results",
+                                    "amp": false,
+                                    "fp16": false,
+                                    "split_batches": true
+                                },
+                                "method_args": [
+                                    {
+                                        "function": "train",
+                                        "params": {}
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "errors": [
+                    "Missing parameter diffusion_model. Hint: Add a default value or type annotation",
+                    "Missing parameter data_loader. Hint: Add a default value or type annotation"
+                ]
+            }
+        ],
+        "functions": []
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "data": {
+        "module": "data_loaders.cars.augmented",
+        "function": "get_dataloader",
+        "params": {
+            "image_size": 256,
+            "augment_horizontal_flip": true,
+            "batch_size": 2,
+            "data_dir": "./data/"
+        },
+        "object_key": "data"
+    },
+    "model": {
+        "module": "models.diffusion",
+        "class_name": "Unet",
+        "object_key": "model",
+        "params": {
+            "dim": 64,
+            "dim_mults": [
+                1,
+                2,
+                4,
+                8
+            ]
+        }
+    },
+    "diffusion": {
+        "module": "models.diffusion",
+        "class_name": "GaussianDiffusion",
+        "object_key": "diffusion",
+        "params": {
+            "model": "{model}",
+            "image_size": 256,
+            "timesteps": 1000,
+            "loss_type": "l1"
+        }
+    },
+    "pytorch_lightning_module": {
+        "module": "trainers.diffusion",
+        "class_name": "LightningDiffusionModule",
+        "object_key": "pl_model",
+        "params": {
+            "diffusion_model": "{diffusion}",
+            "save_dir": "{save_dir}",
+            "opt": {
+                "module": "torch.optim",
+                "class_name": "Adam",
+                "params": {
+                    "lr": 0.0001,
+                    "betas": [
+                        0.49,
+                        0.999
+                    ],
+                    "params": {
+                        "reference_key": "diffusion",
+                        "function_call": "parameters",
+                        "params": {}
+                    }
+                }
+            }
+        }
+    },
+    "trainer": {
+        "module": "pytorch_lightning",
+        "class_name": "Trainer",
+        "params": {
+            "gpus": 1,
+            "max_epochs": 100,
+            "precision": 16,
+            "gradient_clip_val": 0.5,
+            "enable_checkpointing": true,
+            "callbacks": [
+                {
+                    "module": "pytorch_lightning.callbacks",
+                    "class_name": "ModelCheckpoint",
+                    "params": {
+                        "dirpath": "{save_dir}/checkpoints",
+                        "save_last": true,
+                        "mode": "min"
+                    }
+                }
+            ]
+        }
+    }
+}

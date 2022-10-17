@@ -1,0 +1,15 @@
+{
+    "name": "",
+    "description": "",
+    "version": "",
+    "author": "",
+    "license": "",
+    "url": "diffusion/data_loaders/image_folder/",
+    "category": "",
+    "backbone": "",
+    "type": "data_loaders",
+    "exports": {
+        "classes": [],
+        "functions": []
+    }
+}
