@@ -19,12 +19,29 @@ Update: Turns out none of the technicalities really matters at all | <a href="ht
 [![PyPI version](https://badge.fury.io/py/denoising-diffusion-pytorch.svg)](https://badge.fury.io/py/denoising-diffusion-pytorch)
 
 ## Install
+Install yerbamate from <a href="https://github.com/ilex-paraguariensis/yerbamate/tree/v2">here</a>
 
+Install the dependencies:
 ```bash
-$ pip install denoising_diffusion_pytorch
+$ pip install -r diffusion/requirements.text
 ```
 
+
 ## Usage
+
+To train a configuration, run:
+
+```bash
+mate train {config_name}
+```
+
+for example:
+
+```bash
+mate train pl_d
+```
+
+
 
 ```python
 import torch
