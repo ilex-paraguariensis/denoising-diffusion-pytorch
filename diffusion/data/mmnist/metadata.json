@@ -1,0 +1,43 @@
+{
+    "name": "",
+    "description": "",
+    "version": "",
+    "author": "",
+    "license": "",
+    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/data/mmnist/",
+    "category": "",
+    "backbone": "",
+    "module_path": [
+        "data",
+        "mmnist"
+    ],
+    "type": "data",
+    "exports": {
+        "classes": [],
+        "functions": []
+    },
+    "dependencies": {
+        "pip": [
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            },
+            {
+                "name": "pytorch_lightning",
+                "version": "1.7.5",
+                "lastVersion": "1.7.7"
+            },
+            {
+                "name": "ipdb",
+                "version": "0.13.9",
+                "lastVersion": "0.13.9"
+            },
+            {
+                "name": "numpy",
+                "version": "1.23.3",
+                "lastVersion": "1.23.4"
+            }
+        ]
+    }
+}

@@ -4,15 +4,19 @@
     "version": "",
     "author": "",
     "license": "",
-    "url": "diffusion/models/diffusion/",
+    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/models/diffusion/",
     "category": "",
     "backbone": "",
+    "module_path": [
+        "models",
+        "diffusion"
+    ],
     "type": "models",
     "exports": {
         "classes": [
             {
                 "class_name": "GaussianDiffusion",
-                "module": "diffusion",
+                "module": "models.diffusion",
                 "params": {
                     "model": {
                         "type": "unknown",
@@ -98,7 +102,8 @@
                                         "params": {}
                                     }
                                 ]
-                            }
+                            },
+                            "override_params": true
                         }
                     },
                     {
@@ -196,7 +201,8 @@
                                         }
                                     ]
                                 }
-                            }
+                            },
+                            "override_params": true
                         }
                     }
                 ],
@@ -206,7 +212,7 @@
             },
             {
                 "class_name": "Unet",
-                "module": "diffusion",
+                "module": "models.diffusion",
                 "params": {
                     "dim": {
                         "type": "unknown",
@@ -307,7 +313,8 @@
                                         "params": {}
                                     }
                                 ]
-                            }
+                            },
+                            "override_params": true
                         }
                     },
                     {
@@ -408,7 +415,8 @@
                                         }
                                     ]
                                 }
-                            }
+                            },
+                            "override_params": true
                         }
                     }
                 ],
@@ -418,5 +426,29 @@
             }
         ],
         "functions": []
+    },
+    "dependencies": {
+        "pip": [
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
+            },
+            {
+                "name": "einops",
+                "version": "0.4.1",
+                "lastVersion": "0.5.0"
+            },
+            {
+                "name": "tqdm",
+                "version": "4.64.1",
+                "lastVersion": "4.64.1"
+            }
+        ]
     }
 }

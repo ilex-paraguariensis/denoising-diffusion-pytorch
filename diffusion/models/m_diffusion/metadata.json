@@ -4,29 +4,21 @@
     "version": "",
     "author": "",
     "license": "",
-    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/trainers/diffusion/",
+    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/models/m_diffusion/",
     "category": "",
     "backbone": "",
     "module_path": [
-        "trainers",
-        "diffusion"
+        "models",
+        "m_diffusion"
     ],
-    "type": "trainers",
+    "type": "models",
     "exports": {
         "classes": [
             {
-                "class_name": "LightningDiffusionModule",
-                "module": "trainers.diffusion",
+                "class_name": "GaussianDiffusion",
+                "module": "models.m_diffusion",
                 "params": {
-                    "diffusion_model": {
-                        "type": "unknown",
-                        "description": "Unknown type, please add a type annotation or sample value"
-                    },
-                    "opt": {
-                        "type": "unknown",
-                        "description": "Unknown type, please add a type annotation or sample value"
-                    },
-                    "save_dir": {
+                    "model": {
                         "type": "unknown",
                         "description": "Unknown type, please add a type annotation or sample value"
                     }
@@ -34,166 +26,15 @@
                 "samples": [
                     {
                         "sample": {
-                            "module": "trainers.diffusion",
-                            "class_name": "LightningDiffusionModule",
-                            "object_key": "pl_model",
+                            "module": "models.m_diffusion",
+                            "class_name": "GaussianDiffusion",
+                            "object_key": "diffusion",
                             "params": {
-                                "diffusion_model": "{diffusion}",
-                                "save_dir": "{save_dir}",
-                                "opt": {
-                                    "module": "torch.optim",
-                                    "class_name": "Adam",
-                                    "params": {
-                                        "lr": 0.0001,
-                                        "betas": [
-                                            0.49,
-                                            0.999
-                                        ],
-                                        "params": {
-                                            "reference_key": "diffusion",
-                                            "function_call": "parameters",
-                                            "params": {}
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "experiment": {
-                            "data": {
-                                "module": "data_loaders.cars.augmented",
-                                "function": "get_dataloader",
-                                "params": {
-                                    "image_size": 256,
-                                    "augment_horizontal_flip": true,
-                                    "batch_size": 2,
-                                    "data_dir": "./data/"
-                                },
-                                "object_key": "data"
-                            },
-                            "model": {
-                                "module": "models.diffusion",
-                                "class_name": "Unet",
-                                "object_key": "model",
-                                "params": {
-                                    "dim": 64,
-                                    "dim_mults": [
-                                        1,
-                                        2,
-                                        4,
-                                        8
-                                    ]
-                                }
-                            },
-                            "diffusion": {
-                                "module": "models.diffusion",
-                                "class_name": "GaussianDiffusion",
-                                "object_key": "diffusion",
-                                "params": {
-                                    "model": "{model}",
-                                    "image_size": 256,
-                                    "timesteps": 1000,
-                                    "loss_type": "l1"
-                                }
-                            },
-                            "pytorch_lightning_module": {
-                                "module": "trainers.diffusion",
-                                "class_name": "LightningDiffusionModule",
-                                "object_key": "pl_model",
-                                "params": {
-                                    "diffusion_model": "{diffusion}",
-                                    "save_dir": "{save_dir}",
-                                    "opt": {
-                                        "module": "torch.optim",
-                                        "class_name": "Adam",
-                                        "params": {
-                                            "lr": 0.0001,
-                                            "betas": [
-                                                0.49,
-                                                0.999
-                                            ],
-                                            "params": {
-                                                "reference_key": "diffusion",
-                                                "function_call": "parameters",
-                                                "params": {}
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "trainer": {
-                                "module": "pytorch_lightning",
-                                "class_name": "Trainer",
-                                "params": {
-                                    "gpus": 1,
-                                    "max_epochs": 100,
-                                    "precision": 16,
-                                    "gradient_clip_val": 0.5,
-                                    "enable_checkpointing": true,
-                                    "callbacks": [
-                                        {
-                                            "module": "pytorch_lightning.callbacks",
-                                            "class_name": "ModelCheckpoint",
-                                            "params": {
-                                                "dirpath": "{save_dir}/checkpoints",
-                                                "save_last": true,
-                                                "mode": "min"
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            "override_params": true
-                        }
-                    }
-                ],
-                "errors": [
-                    "Missing parameter diffusion_model. Hint: Add a default value or type annotation",
-                    "Missing parameter opt. Hint: Add a default value or type annotation",
-                    "Missing parameter save_dir. Hint: Add a default value or type annotation"
-                ]
-            },
-            {
-                "class_name": "MLDiffusionModule",
-                "module": "trainers.diffusion",
-                "params": {
-                    "diffusion_model": {
-                        "type": "unknown",
-                        "description": "Unknown type, please add a type annotation or sample value"
-                    },
-                    "opt": {
-                        "type": "unknown",
-                        "description": "Unknown type, please add a type annotation or sample value"
-                    },
-                    "save_dir": {
-                        "type": "unknown",
-                        "description": "Unknown type, please add a type annotation or sample value"
-                    }
-                },
-                "samples": [
-                    {
-                        "sample": {
-                            "module": "trainers.diffusion",
-                            "class_name": "MLDiffusionModule",
-                            "object_key": "pl_model",
-                            "params": {
-                                "diffusion_model": "{diffusion}",
-                                "save_dir": "{save_dir}",
-                                "opt": {
-                                    "module": "torch.optim",
-                                    "class_name": "Adam",
-                                    "params": {
-                                        "lr": 0.0001,
-                                        "betas": [
-                                            0.49,
-                                            0.999
-                                        ],
-                                        "params": {
-                                            "reference_key": "diffusion",
-                                            "function_call": "parameters",
-                                            "params": {}
-                                        }
-                                    }
-                                }
+                                "model": "{model}",
+                                "image_size": 64,
+                                "timesteps": 1000,
+                                "loss_type": "l1",
+                                "objective": "pred_x0"
                             }
                         },
                         "experiment": {
@@ -289,9 +130,141 @@
                     }
                 ],
                 "errors": [
-                    "Missing parameter diffusion_model. Hint: Add a default value or type annotation",
-                    "Missing parameter opt. Hint: Add a default value or type annotation",
-                    "Missing parameter save_dir. Hint: Add a default value or type annotation"
+                    "Missing parameter model. Hint: Add a default value or type annotation"
+                ]
+            },
+            {
+                "class_name": "Unet",
+                "module": "models.m_diffusion",
+                "params": {
+                    "dim": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "dim_mults": [
+                        1,
+                        2,
+                        4,
+                        8
+                    ],
+                    "channels": 3,
+                    "self_condition": false,
+                    "resnet_block_groups": 8,
+                    "learned_variance": false,
+                    "learned_sinusoidal_cond": false,
+                    "learned_sinusoidal_dim": 16
+                },
+                "samples": [
+                    {
+                        "sample": {
+                            "module": "models.m_diffusion",
+                            "class_name": "Unet",
+                            "object_key": "model",
+                            "params": {
+                                "dim": 64,
+                                "channels": 20,
+                                "dim_mults": [
+                                    1,
+                                    2,
+                                    4,
+                                    8
+                                ]
+                            }
+                        },
+                        "experiment": {
+                            "data": {
+                                "module": "data.mmnist.moving_mnist",
+                                "class_name": "CustomDataModule",
+                                "params": {
+                                    "data_location": "./data",
+                                    "train_batch_size": 8,
+                                    "test_batch_size": 8,
+                                    "in_seq_len": 10,
+                                    "out_seq_len": 10,
+                                    "image_size": 64
+                                },
+                                "object_key": "data"
+                            },
+                            "model": {
+                                "module": "models.m_diffusion",
+                                "class_name": "Unet",
+                                "object_key": "model",
+                                "params": {
+                                    "dim": 64,
+                                    "channels": 20,
+                                    "dim_mults": [
+                                        1,
+                                        2,
+                                        4,
+                                        8
+                                    ]
+                                }
+                            },
+                            "diffusion": {
+                                "module": "models.m_diffusion",
+                                "class_name": "GaussianDiffusion",
+                                "object_key": "diffusion",
+                                "params": {
+                                    "model": "{model}",
+                                    "image_size": 64,
+                                    "timesteps": 1000,
+                                    "loss_type": "l1",
+                                    "objective": "pred_x0"
+                                }
+                            },
+                            "pytorch_lightning_module": {
+                                "module": "trainers.diffusion",
+                                "class_name": "MLDiffusionModule",
+                                "object_key": "pl_model",
+                                "params": {
+                                    "diffusion_model": "{diffusion}",
+                                    "save_dir": "{save_dir}",
+                                    "opt": {
+                                        "module": "torch.optim",
+                                        "class_name": "Adam",
+                                        "params": {
+                                            "lr": 0.0001,
+                                            "betas": [
+                                                0.49,
+                                                0.999
+                                            ],
+                                            "params": {
+                                                "reference_key": "diffusion",
+                                                "function_call": "parameters",
+                                                "params": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "trainer": {
+                                "module": "pytorch_lightning",
+                                "class_name": "Trainer",
+                                "params": {
+                                    "gpus": 1,
+                                    "max_epochs": 100,
+                                    "precision": 16,
+                                    "gradient_clip_val": 1,
+                                    "enable_checkpointing": true,
+                                    "callbacks": [
+                                        {
+                                            "module": "pytorch_lightning.callbacks",
+                                            "class_name": "ModelCheckpoint",
+                                            "params": {
+                                                "dirpath": "{save_dir}/checkpoints",
+                                                "save_last": true,
+                                                "mode": "min"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "override_params": true
+                        }
+                    }
+                ],
+                "errors": [
+                    "Missing parameter dim. Hint: Add a default value or type annotation"
                 ]
             }
         ],
@@ -305,9 +278,14 @@
                 "lastVersion": "1.12.1"
             },
             {
-                "name": "pytorch_lightning",
-                "version": "1.7.5",
-                "lastVersion": "1.7.7"
+                "name": "einops",
+                "version": "0.4.1",
+                "lastVersion": "0.5.0"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             },
             {
                 "name": "ipdb",
@@ -315,9 +293,9 @@
                 "lastVersion": "0.13.9"
             },
             {
-                "name": "torchvision",
-                "version": "0.13.1+cu116",
-                "lastVersion": "0.13.1"
+                "name": "tqdm",
+                "version": "4.64.1",
+                "lastVersion": "4.64.1"
             }
         ]
     }

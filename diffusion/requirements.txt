@@ -1,0 +1,9 @@
+accelerate==0.13.1
+einops==0.4.1
+ema_pytorch==0.0.10
+ipdb==0.13.9
+Pillow==9.2.0
+pytorch_lightning==1.7.5
+torch==1.12.1+cu116
+torchvision==0.13.1+cu116
+tqdm==4.64.1

@@ -1,4 +1,24 @@
 {
     "project": "diffusion",
-    "results_folder": "results"
+    "results_folder": "results",
+    "override_params": {
+        "enabled": true
+    },
+    "git": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/",
+    "dependencies": {
+        "mate": [
+            "https://github.com/ilex-paraguariensis/examples/tree/main/pytorch-lightning/resnet-cifar10/resnet_cifar10/data/cifar10",
+            "url2"
+        ],
+        "pip": [
+            {
+                "name": "numpy"
+            },
+            {
+                "name": "scipy",
+                "version": "0.17.1",
+                "min_version": "0.17.0"
+            }
+        ]
+    }
 }
