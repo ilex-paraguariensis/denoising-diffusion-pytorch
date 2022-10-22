@@ -8,6 +8,7 @@
     "category": "",
     "backbone": "",
     "module_path": [
+        "diffusion",
         "trainers",
         "denoising_diffusion_pytorch"
     ],
@@ -158,9 +159,9 @@
     "dependencies": {
         "pip": [
             {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
+                "name": "einops",
+                "version": "0.4.1",
+                "lastVersion": "0.5.0"
             },
             {
                 "name": "torch",
@@ -173,14 +174,14 @@
                 "lastVersion": "4.64.1"
             },
             {
-                "name": "einops",
-                "version": "0.4.1",
-                "lastVersion": "0.5.0"
-            },
-            {
                 "name": "torchvision",
                 "version": "0.13.1+cu116",
                 "lastVersion": "0.13.1"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             }
         ]
     }

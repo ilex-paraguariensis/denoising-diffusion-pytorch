@@ -8,6 +8,7 @@
     "category": "",
     "backbone": "",
     "module_path": [
+        "diffusion",
         "data_loaders",
         "cars"
     ],
@@ -37,14 +38,14 @@
                 "lastVersion": "1.7.7"
             },
             {
-                "name": "torchvision",
-                "version": "0.13.1+cu116",
-                "lastVersion": "0.13.1"
-            },
-            {
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
+            },
+            {
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
             }
         ]
     }

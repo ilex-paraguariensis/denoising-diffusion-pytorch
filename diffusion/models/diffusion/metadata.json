@@ -8,6 +8,7 @@
     "category": "",
     "backbone": "",
     "module_path": [
+        "diffusion",
         "models",
         "diffusion"
     ],
@@ -431,24 +432,24 @@
     "dependencies": {
         "pip": [
             {
-                "name": "tqdm",
-                "version": "4.64.1",
-                "lastVersion": "4.64.1"
-            },
-            {
                 "name": "einops",
                 "version": "0.4.1",
                 "lastVersion": "0.5.0"
             },
             {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
-            },
-            {
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
+            },
+            {
+                "name": "tqdm",
+                "version": "4.64.1",
+                "lastVersion": "4.64.1"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             }
         ]
     }

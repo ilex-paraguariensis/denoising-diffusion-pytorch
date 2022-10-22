@@ -8,6 +8,7 @@
     "category": "",
     "backbone": "",
     "module_path": [
+        "diffusion",
         "data",
         "pl_module",
         "mmnist"
@@ -159,19 +160,7 @@
                     "Missing parameter in_seq_len. Hint: Add a default value or type annotation",
                     "Missing parameter out_seq_len. Hint: Add a default value or type annotation",
                     "Missing parameter image_size. Hint: Add a default value or type annotation"
-                ],
-                "returns": {
-                    "class": "<class 'diffusion.data.pl_module.mmnist.moving_mnist.CustomDataModule'>",
-                    "module": "diffusion.data.pl_module.mmnist.moving_mnist",
-                    "mro": [
-                        "<class 'diffusion.data.pl_module.mmnist.moving_mnist.CustomDataModule'>",
-                        "<class 'pytorch_lightning.core.datamodule.LightningDataModule'>",
-                        "<class 'pytorch_lightning.core.hooks.CheckpointHooks'>",
-                        "<class 'pytorch_lightning.core.hooks.DataHooks'>",
-                        "<class 'pytorch_lightning.core.mixins.hparams_mixin.HyperparametersMixin'>",
-                        "<class 'object'>"
-                    ]
-                }
+                ]
             },
             {
                 "class_name": "MovingMNIST",
@@ -203,11 +192,6 @@
     "dependencies": {
         "pip": [
             {
-                "name": "ipdb",
-                "version": "0.13.9",
-                "lastVersion": "0.13.9"
-            },
-            {
                 "name": "pytorch_lightning",
                 "version": "1.7.5",
                 "lastVersion": "1.7.7"
@@ -221,6 +205,11 @@
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
+            },
+            {
+                "name": "ipdb",
+                "version": "0.13.9",
+                "lastVersion": "0.13.9"
             }
         ]
     }
