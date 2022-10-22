@@ -1,0 +1,108 @@
+{
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
+    "version": "",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/data/pl_module/mmnist/",
+    "category": "",
+    "backbone": "",
+    "module_path": [
+        "data",
+        "pl_module",
+        "mmnist"
+    ],
+    "hash": "c286163f7ad523cf8d031ba61d7dec0d98609438",
+    "type": "data",
+    "exports": {
+        "classes": [
+            {
+                "class_name": "CustomDataModule",
+                "module": "data.pl_module.mmnist",
+                "params": {
+                    "data_location": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "train_batch_size": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "test_batch_size": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "in_seq_len": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "out_seq_len": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "image_size": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    }
+                },
+                "errors": [
+                    "Missing parameter data_location. Hint: Add a default value or type annotation",
+                    "Missing parameter train_batch_size. Hint: Add a default value or type annotation",
+                    "Missing parameter test_batch_size. Hint: Add a default value or type annotation",
+                    "Missing parameter in_seq_len. Hint: Add a default value or type annotation",
+                    "Missing parameter out_seq_len. Hint: Add a default value or type annotation",
+                    "Missing parameter image_size. Hint: Add a default value or type annotation"
+                ]
+            },
+            {
+                "class_name": "MovingMNIST",
+                "module": "data.pl_module.mmnist",
+                "params": {
+                    "root": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "image_size": {
+                        "type": "unknown",
+                        "description": "Unknown type, please add a type annotation or sample value"
+                    },
+                    "is_train": true,
+                    "n_frames_input": 10,
+                    "n_frames_output": 10,
+                    "num_objects": [
+                        2
+                    ]
+                },
+                "errors": [
+                    "Missing parameter root. Hint: Add a default value or type annotation",
+                    "Missing parameter image_size. Hint: Add a default value or type annotation"
+                ]
+            }
+        ],
+        "functions": []
+    },
+    "dependencies": {
+        "pip": [
+            {
+                "name": "ipdb",
+                "version": "0.13.9",
+                "lastVersion": "0.13.9"
+            },
+            {
+                "name": "numpy",
+                "version": "1.23.4",
+                "lastVersion": "1.23.4"
+            },
+            {
+                "name": "pytorch_lightning",
+                "version": "1.7.5",
+                "lastVersion": "1.7.7"
+            },
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            }
+        ]
+    }
+}

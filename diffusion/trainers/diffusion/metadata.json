@@ -301,24 +301,24 @@
     "dependencies": {
         "pip": [
             {
-                "name": "pytorch_lightning",
-                "version": "1.7.5",
-                "lastVersion": "1.7.7"
-            },
-            {
-                "name": "torchvision",
-                "version": "0.13.1+cu116",
-                "lastVersion": "0.13.1"
-            },
-            {
                 "name": "ipdb",
                 "version": "0.13.9",
                 "lastVersion": "0.13.9"
             },
             {
+                "name": "pytorch_lightning",
+                "version": "1.7.5",
+                "lastVersion": "1.7.7"
+            },
+            {
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
+            },
+            {
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
             }
         ]
     }

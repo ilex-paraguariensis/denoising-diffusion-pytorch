@@ -431,9 +431,9 @@
     "dependencies": {
         "pip": [
             {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
+                "name": "tqdm",
+                "version": "4.64.1",
+                "lastVersion": "4.64.1"
             },
             {
                 "name": "einops",
@@ -446,9 +446,9 @@
                 "lastVersion": "1.12.1"
             },
             {
-                "name": "tqdm",
-                "version": "4.64.1",
-                "lastVersion": "4.64.1"
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             }
         ]
     }
