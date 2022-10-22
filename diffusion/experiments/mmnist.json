@@ -1,6 +1,6 @@
 {
     "data": {
-        "module": "data.mmnist.moving_mnist",
+        "module": "data.pl_module.mmnist.moving_mnist",
         "class_name": "CustomDataModule",
         "params": {
             "data_location": "./data",

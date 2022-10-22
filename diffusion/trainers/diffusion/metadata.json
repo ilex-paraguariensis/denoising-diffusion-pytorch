@@ -199,7 +199,7 @@
                         },
                         "experiment": {
                             "data": {
-                                "module": "data.mmnist.moving_mnist",
+                                "module": "data.pl_module.mmnist.moving_mnist",
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
@@ -293,7 +293,23 @@
                     "Missing parameter diffusion_model. Hint: Add a default value or type annotation",
                     "Missing parameter opt. Hint: Add a default value or type annotation",
                     "Missing parameter save_dir. Hint: Add a default value or type annotation"
-                ]
+                ],
+                "returns": {
+                    "class": "<class 'diffusion.trainers.diffusion.MLDiffusionModule.LightningDiffusionModule'>",
+                    "module": "diffusion.trainers.diffusion.MLDiffusionModule",
+                    "mro": [
+                        "<class 'diffusion.trainers.diffusion.MLDiffusionModule.LightningDiffusionModule'>",
+                        "<class 'pytorch_lightning.core.module.LightningModule'>",
+                        "<class 'pytorch_lightning.core.mixins.device_dtype_mixin.DeviceDtypeModuleMixin'>",
+                        "<class 'pytorch_lightning.core.mixins.hparams_mixin.HyperparametersMixin'>",
+                        "<class 'pytorch_lightning.core.saving.ModelIO'>",
+                        "<class 'pytorch_lightning.core.hooks.ModelHooks'>",
+                        "<class 'pytorch_lightning.core.hooks.DataHooks'>",
+                        "<class 'pytorch_lightning.core.hooks.CheckpointHooks'>",
+                        "<class 'torch.nn.modules.module.Module'>",
+                        "<class 'object'>"
+                    ]
+                }
             }
         ],
         "functions": []
@@ -311,14 +327,14 @@
                 "lastVersion": "1.7.7"
             },
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
-            },
-            {
                 "name": "torchvision",
                 "version": "0.13.1+cu116",
                 "lastVersion": "0.13.1"
+            },
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
             }
         ]
     }

@@ -40,7 +40,7 @@
                         },
                         "experiment": {
                             "data": {
-                                "module": "data.mmnist.moving_mnist",
+                                "module": "data.pl_module.mmnist.moving_mnist",
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
@@ -132,7 +132,16 @@
                 ],
                 "errors": [
                     "Missing parameter model. Hint: Add a default value or type annotation"
-                ]
+                ],
+                "returns": {
+                    "class": "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.GaussianDiffusion'>",
+                    "module": "diffusion.models.m_diffusion.denoising_diffusion_pytorch",
+                    "mro": [
+                        "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.GaussianDiffusion'>",
+                        "<class 'torch.nn.modules.module.Module'>",
+                        "<class 'object'>"
+                    ]
+                }
             },
             {
                 "class_name": "Unet",
@@ -174,7 +183,7 @@
                         },
                         "experiment": {
                             "data": {
-                                "module": "data.mmnist.moving_mnist",
+                                "module": "data.pl_module.mmnist.moving_mnist",
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
@@ -266,13 +275,27 @@
                 ],
                 "errors": [
                     "Missing parameter dim. Hint: Add a default value or type annotation"
-                ]
+                ],
+                "returns": {
+                    "class": "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.Unet'>",
+                    "module": "diffusion.models.m_diffusion.denoising_diffusion_pytorch",
+                    "mro": [
+                        "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.Unet'>",
+                        "<class 'torch.nn.modules.module.Module'>",
+                        "<class 'object'>"
+                    ]
+                }
             }
         ],
         "functions": []
     },
     "dependencies": {
         "pip": [
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
+            },
             {
                 "name": "torch",
                 "version": "1.12.1+cu116",
@@ -287,11 +310,6 @@
                 "name": "einops",
                 "version": "0.4.1",
                 "lastVersion": "0.5.0"
-            },
-            {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
             },
             {
                 "name": "ipdb",
