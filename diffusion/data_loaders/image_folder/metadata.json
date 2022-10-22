@@ -4,12 +4,30 @@
     "version": "",
     "author": "",
     "license": "",
-    "url": "diffusion/data_loaders/image_folder/",
+    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/data_loaders/image_folder/",
     "category": "",
     "backbone": "",
+    "module_path": [
+        "data_loaders",
+        "image_folder"
+    ],
     "type": "data_loaders",
     "exports": {
         "classes": [],
         "functions": []
+    },
+    "dependencies": {
+        "pip": [
+            {
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
+            },
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            }
+        ]
     }
 }

@@ -13,6 +13,8 @@ import torch
 import torch.utils.data as data
 import ipdb
 
+from torch.functional import F
+
 
 def load_mnist(root):
     # Load MNIST dataset for generating training data.
@@ -59,18 +61,18 @@ class CustomDataModule(LightningDataModule):
 
         self.train_data = MovingMNIST(
             self.data_location,
+            self.image_size,
             True,
             self.in_seq_len,
             self.out_seq_len,
-            image_size=self.image_size,
             # transform=self.split_tranform,
         )
         self.test_data = MovingMNIST(
             self.data_location,
+            self.image_size,
             False,
             self.in_seq_len,
             self.out_seq_len,
-            image_size=self.image_size,
         )
 
     def train_dataloader(self):
@@ -102,10 +104,10 @@ class MovingMNIST(data.Dataset):
     def __init__(
         self,
         root,
+        image_size,
         is_train=True,
         n_frames_input=10,
         n_frames_output=10,
-        image_size=64,
         num_objects=[2],
         transform=None,
     ):
@@ -131,7 +133,7 @@ class MovingMNIST(data.Dataset):
         self.image_size_ = image_size
         self.digit_size_ = 28
         self.step_length_ = 0.1
-
+        # ipdb.set_trace()
         self.mean = 0
         self.std = 1
 
@@ -180,6 +182,7 @@ class MovingMNIST(data.Dataset):
         data = np.zeros(
             (self.n_frames_total, self.image_size_, self.image_size_), dtype=np.float32
         )
+
         for n in range(num_digits):
             # Trajectory
             start_y, start_x = self.get_random_trajectory(self.n_frames_total)
@@ -207,23 +210,34 @@ class MovingMNIST(data.Dataset):
             images = self.generate_moving_mnist(num_digits)
         else:
             images = self.dataset[:, idx, ...]
+            # if self.image_size_ != 64:
+            # Resize images
+            # tensorflow resize_bilinear
 
         r = 1
-        w = int(64 / r)
-        images = (
-            images.reshape((length, w, r, w, r))
-            .transpose(0, 2, 4, 1, 3)
-            .reshape((length, r * r, w, w))
-        )
+        w = int(self.image_size_ / r)
+
+        images = torch.from_numpy(images / 255).float()
+        # print(images.shape)
+
+        images = images.permute(0, 3, 1, 2)
+        if images.shape[1] != self.image_size_:
+            images = F.interpolate(
+                images,
+                size=(self.image_size_, self.image_size_),
+                mode="bilinear",
+                align_corners=True,
+            )
+
+        # print(images.shape)
+        # images = images.permute(0, 3, 1, 2)
+
+        # print(images.shape)
 
         input = images[: self.n_frames_input]
-        if self.n_frames_output > 0:
-            output = images[self.n_frames_input : length]
-        else:
-            output = []
-
-        output = torch.from_numpy(2 * output / 255.0 - 1).contiguous().float()
-        input = torch.from_numpy(2 * input / 255.0 - 1).contiguous().float()
+        output = images[
+            self.n_frames_input : self.n_frames_input + self.n_frames_output
+        ]
         return input, output
 
     def __len__(self):

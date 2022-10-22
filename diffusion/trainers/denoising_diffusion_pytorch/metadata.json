@@ -1,16 +1,17 @@
 {
-    "name": "",
-    "description": "",
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
     "version": "",
-    "author": "",
-    "license": "",
-    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/trainers/denoising_diffusion_pytorch/",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/trainers/denoising_diffusion_pytorch/",
     "category": "",
     "backbone": "",
     "module_path": [
         "trainers",
         "denoising_diffusion_pytorch"
     ],
+    "hash": "e1510834e1265a193ec73c04a78ee474bf0e4f5d",
     "type": "trainers",
     "exports": {
         "classes": [
@@ -157,9 +158,9 @@
     "dependencies": {
         "pip": [
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
             },
             {
                 "name": "einops",
@@ -167,19 +168,19 @@
                 "lastVersion": "0.5.0"
             },
             {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
-            },
-            {
-                "name": "torchvision",
-                "version": "0.13.1+cu116",
-                "lastVersion": "0.13.1"
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
             },
             {
                 "name": "tqdm",
                 "version": "4.64.1",
                 "lastVersion": "4.64.1"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             }
         ]
     }

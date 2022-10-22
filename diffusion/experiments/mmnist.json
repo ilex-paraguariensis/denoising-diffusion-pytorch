@@ -4,8 +4,8 @@
         "class_name": "CustomDataModule",
         "params": {
             "data_location": "./data",
-            "train_batch_size": 8,
-            "test_batch_size": 8,
+            "train_batch_size": 4,
+            "test_batch_size": 4,
             "in_seq_len": 10,
             "out_seq_len": 10,
             "image_size": 64

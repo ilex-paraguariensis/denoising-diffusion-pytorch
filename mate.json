@@ -4,7 +4,7 @@
     "override_params": {
         "enabled": true
     },
-    "git": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/",
+    "git": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/",
     "dependencies": {
         "mate": [
             "https://github.com/ilex-paraguariensis/examples/tree/main/pytorch-lightning/resnet-cifar10/resnet_cifar10/data/cifar10",
@@ -20,5 +20,12 @@
                 "min_version": "0.17.0"
             }
         ]
+    },
+    "metadata": {
+        "name": "diffusion",
+        "description": "Diffusion Probabilistic Models",
+        "author": "lucidrains",
+        "license": "MIT",
+        "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/"
     }
 }

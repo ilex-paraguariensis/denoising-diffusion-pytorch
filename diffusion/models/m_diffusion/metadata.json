@@ -1,16 +1,17 @@
 {
-    "name": "",
-    "description": "",
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
     "version": "",
-    "author": "",
-    "license": "",
-    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/models/m_diffusion/",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/models/m_diffusion/",
     "category": "",
     "backbone": "",
     "module_path": [
         "models",
         "m_diffusion"
     ],
+    "hash": "c53ebbe85d0cce1f304aba04ace89a504e9e503a",
     "type": "models",
     "exports": {
         "classes": [
@@ -43,8 +44,8 @@
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
-                                    "train_batch_size": 8,
-                                    "test_batch_size": 8,
+                                    "train_batch_size": 4,
+                                    "test_batch_size": 4,
                                     "in_seq_len": 10,
                                     "out_seq_len": 10,
                                     "image_size": 64
@@ -177,8 +178,8 @@
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
-                                    "train_batch_size": 8,
-                                    "test_batch_size": 8,
+                                    "train_batch_size": 4,
+                                    "test_batch_size": 4,
                                     "in_seq_len": 10,
                                     "out_seq_len": 10,
                                     "image_size": 64
@@ -273,19 +274,9 @@
     "dependencies": {
         "pip": [
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
-            },
-            {
                 "name": "einops",
                 "version": "0.4.1",
                 "lastVersion": "0.5.0"
-            },
-            {
-                "name": "accelerate",
-                "version": "0.13.1",
-                "lastVersion": "0.13.2"
             },
             {
                 "name": "ipdb",
@@ -293,9 +284,19 @@
                 "lastVersion": "0.13.9"
             },
             {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            },
+            {
                 "name": "tqdm",
                 "version": "4.64.1",
                 "lastVersion": "4.64.1"
+            },
+            {
+                "name": "accelerate",
+                "version": "0.13.1",
+                "lastVersion": "0.13.2"
             }
         ]
     }

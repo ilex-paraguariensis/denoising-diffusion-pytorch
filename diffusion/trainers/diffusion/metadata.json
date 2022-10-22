@@ -1,16 +1,17 @@
 {
-    "name": "",
-    "description": "",
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
     "version": "",
-    "author": "",
-    "license": "",
-    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/trainers/diffusion/",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/trainers/diffusion/",
     "category": "",
     "backbone": "",
     "module_path": [
         "trainers",
         "diffusion"
     ],
+    "hash": "c8454ef10b5706fc5b501237b2c7c6cd7a5d9d2c",
     "type": "trainers",
     "exports": {
         "classes": [
@@ -202,8 +203,8 @@
                                 "class_name": "CustomDataModule",
                                 "params": {
                                     "data_location": "./data",
-                                    "train_batch_size": 8,
-                                    "test_batch_size": 8,
+                                    "train_batch_size": 4,
+                                    "test_batch_size": 4,
                                     "in_seq_len": 10,
                                     "out_seq_len": 10,
                                     "image_size": 64
@@ -300,14 +301,14 @@
     "dependencies": {
         "pip": [
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
-            },
-            {
                 "name": "pytorch_lightning",
                 "version": "1.7.5",
                 "lastVersion": "1.7.7"
+            },
+            {
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
             },
             {
                 "name": "ipdb",
@@ -315,9 +316,9 @@
                 "lastVersion": "0.13.9"
             },
             {
-                "name": "torchvision",
-                "version": "0.13.1+cu116",
-                "lastVersion": "0.13.1"
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
             }
         ]
     }

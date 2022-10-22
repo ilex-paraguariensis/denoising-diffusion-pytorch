@@ -19,9 +19,9 @@
     "dependencies": {
         "pip": [
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
+                "name": "ipdb",
+                "version": "0.13.9",
+                "lastVersion": "0.13.9"
             },
             {
                 "name": "pytorch_lightning",
@@ -29,9 +29,9 @@
                 "lastVersion": "1.7.7"
             },
             {
-                "name": "ipdb",
-                "version": "0.13.9",
-                "lastVersion": "0.13.9"
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
             },
             {
                 "name": "numpy",

@@ -1,18 +1,23 @@
 {
-    "name": "",
-    "description": "",
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
     "version": "",
-    "author": "",
-    "license": "",
-    "url": "diffusion/data_loaders/cars/",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/data_loaders/cars/",
     "category": "",
     "backbone": "",
+    "module_path": [
+        "data_loaders",
+        "cars"
+    ],
+    "hash": "faecdcce57798cfba9c08068bed456fde42a1e67",
     "type": "data_loaders",
     "exports": {
         "classes": [
             {
                 "class_name": "CarsLightningDataModule",
-                "module": "cars",
+                "module": "data_loaders.cars",
                 "params": {
                     "image_size": 128,
                     "aug_prob": 0.5,
@@ -23,5 +28,24 @@
             }
         ],
         "functions": []
+    },
+    "dependencies": {
+        "pip": [
+            {
+                "name": "pytorch_lightning",
+                "version": "1.7.5",
+                "lastVersion": "1.7.7"
+            },
+            {
+                "name": "torchvision",
+                "version": "0.13.1+cu116",
+                "lastVersion": "0.13.1"
+            },
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
+            }
+        ]
     }
 }

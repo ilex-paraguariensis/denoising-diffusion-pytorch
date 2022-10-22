@@ -1,16 +1,17 @@
 {
-    "name": "",
-    "description": "",
+    "name": "diffusion",
+    "description": "Diffusion Probabilistic Models",
     "version": "",
-    "author": "",
-    "license": "",
-    "url": "https///github.com/ilex-paraguariensis/denoising-diffusion-pytorch/diffusion/models/diffusion/",
+    "author": "lucidrains",
+    "license": "MIT",
+    "url": "https://github.com/ilex-paraguariensis/denoising-diffusion-pytorch/tree/main/diffusion/models/diffusion/",
     "category": "",
     "backbone": "",
     "module_path": [
         "models",
         "diffusion"
     ],
+    "hash": "8d47af121689f4d0c7953ddca6691406ee376573",
     "type": "models",
     "exports": {
         "classes": [
@@ -430,11 +431,6 @@
     "dependencies": {
         "pip": [
             {
-                "name": "torch",
-                "version": "1.12.1+cu116",
-                "lastVersion": "1.12.1"
-            },
-            {
                 "name": "accelerate",
                 "version": "0.13.1",
                 "lastVersion": "0.13.2"
@@ -443,6 +439,11 @@
                 "name": "einops",
                 "version": "0.4.1",
                 "lastVersion": "0.5.0"
+            },
+            {
+                "name": "torch",
+                "version": "1.12.1+cu116",
+                "lastVersion": "1.12.1"
             },
             {
                 "name": "tqdm",

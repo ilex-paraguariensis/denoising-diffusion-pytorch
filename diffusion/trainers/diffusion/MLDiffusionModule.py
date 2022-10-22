@@ -23,7 +23,11 @@ class LightningDiffusionModule(LightningModule):
         y_hat = self.predict(x)
 
         # add auxilary loss
-        loss += 0.1* F.l1_loss(y_hat, y)
+        direct_loss = F.l1_loss(y_hat, y)
+
+        # randomly set loss to direct loss
+        if torch.rand(1) < 0.5:
+            loss = direct_loss
 
         if batch_idx % 200:
             y = self.predict(x)
@@ -44,6 +48,7 @@ class LightningDiffusionModule(LightningModule):
     def validation_step(self, batch, batch_idx):
         x, y = batch
         B, T, C, H, W = x.shape
+        # ipdb.set_trace()
         x = x.view(B, C * T, H, W)
         y = y.view(B, C * T, H, W)
         loss = self.model(x, y)
@@ -67,5 +72,6 @@ class LightningDiffusionModule(LightningModule):
         epoch = self.current_epoch
 
         save_path = os.path.join(save_dir, f"epoch_{epoch}_{key}.png")
-        generated_images = generated_images.clamp_(0.0, 1.0)
+        generated_images = generated_images.clamp_(0, 1.0)
+        # generated_images = (generated_images + 1) / 2
         torchvision.utils.save_image(generated_images, save_path, ncolumns=20)
