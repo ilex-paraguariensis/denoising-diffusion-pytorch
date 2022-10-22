@@ -8,7 +8,6 @@
     "category": "",
     "backbone": "",
     "module_path": [
-        "diffusion",
         "models",
         "m_diffusion"
     ],
@@ -133,7 +132,16 @@
                 ],
                 "errors": [
                     "Missing parameter model. Hint: Add a default value or type annotation"
-                ]
+                ],
+                "returns": {
+                    "class": "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.GaussianDiffusion'>",
+                    "module": "diffusion.models.m_diffusion.denoising_diffusion_pytorch",
+                    "mro": [
+                        "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.GaussianDiffusion'>",
+                        "<class 'torch.nn.modules.module.Module'>",
+                        "<class 'object'>"
+                    ]
+                }
             },
             {
                 "class_name": "Unet",
@@ -267,7 +275,16 @@
                 ],
                 "errors": [
                     "Missing parameter dim. Hint: Add a default value or type annotation"
-                ]
+                ],
+                "returns": {
+                    "class": "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.Unet'>",
+                    "module": "diffusion.models.m_diffusion.denoising_diffusion_pytorch",
+                    "mro": [
+                        "<class 'diffusion.models.m_diffusion.denoising_diffusion_pytorch.Unet'>",
+                        "<class 'torch.nn.modules.module.Module'>",
+                        "<class 'object'>"
+                    ]
+                }
             }
         ],
         "functions": []
@@ -280,11 +297,6 @@
                 "lastVersion": "0.13.9"
             },
             {
-                "name": "einops",
-                "version": "0.4.1",
-                "lastVersion": "0.5.0"
-            },
-            {
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
@@ -293,6 +305,11 @@
                 "name": "tqdm",
                 "version": "4.64.1",
                 "lastVersion": "4.64.1"
+            },
+            {
+                "name": "einops",
+                "version": "0.4.1",
+                "lastVersion": "0.5.0"
             },
             {
                 "name": "accelerate",

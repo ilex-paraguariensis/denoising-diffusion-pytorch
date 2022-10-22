@@ -8,7 +8,6 @@
     "category": "",
     "backbone": "",
     "module_path": [
-        "diffusion",
         "data_loaders",
         "cars"
     ],
@@ -33,14 +32,14 @@
     "dependencies": {
         "pip": [
             {
-                "name": "pytorch_lightning",
-                "version": "1.7.5",
-                "lastVersion": "1.7.7"
-            },
-            {
                 "name": "torch",
                 "version": "1.12.1+cu116",
                 "lastVersion": "1.12.1"
+            },
+            {
+                "name": "pytorch_lightning",
+                "version": "1.7.5",
+                "lastVersion": "1.7.7"
             },
             {
                 "name": "torchvision",
